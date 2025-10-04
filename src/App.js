@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Login from './components/Login'; // Ensure this matches the export type
-import Advertisement from './components/Advertisement'; // Ensure this matches the export type
-import AdvertisementPopup from './components/AdvertisementPopup'; // Ensure this matches the export type
-import FrontendLogger from './components/FrontendLogger'; // Ensure this matches the export type
-import Logger from './components/Logger'; // Ensure this matches the export type
+import Login from './components/Login';
+import Advertisement from './components/Advertisement';
+import AdvertisementPopup from './components/AdvertisementPopup';
+import FrontendLogger from './components/FrontendLogger';
+import Logger from './components/Logger';
 
 const App = () => {
   const [currentStep, setCurrentStep] = useState('popup'); // Manage the current step in the flow
@@ -13,9 +13,7 @@ const App = () => {
   }, [currentStep]);
 
   const handlePopupClose = () => {
-    console.log('AdvertisementPopup close button pressed'); // Debug log
     setCurrentStep('login'); // Transition to the login step
-    console.log('Navigating to login step'); // Debug log
   };
 
   const handleLogin = () => {
@@ -26,16 +24,18 @@ const App = () => {
     setCurrentStep('logger'); // Transition to the Logger step
   };
 
+  const handleLogout = () => {
+    setCurrentStep('popup'); // Reset to the popup step
+  };
+
+  const handleGoBack = () => {
+    setCurrentStep('login'); // Navigate back to the login step
+  };
+
   return (
     <div>
-      {/* Render components based on the current step */}
       {currentStep === 'popup' && (
-        <AdvertisementPopup
-          onClose={() => {
-            console.log('onClose callback triggered'); // Debug log
-            handlePopupClose();
-          }}
-        />
+        <AdvertisementPopup onClose={handlePopupClose} />
       )}
       {currentStep === 'login' && (
         <div>
@@ -46,7 +46,11 @@ const App = () => {
         </div>
       )}
       {currentStep === 'frontendLogger' && (
-        <FrontendLogger onComplete={handleFrontendLoggerComplete} />
+        <FrontendLogger
+          onComplete={handleFrontendLoggerComplete}
+          onLogout={handleLogout}
+          onGoBack={handleGoBack}
+        />
       )}
       {currentStep === 'logger' && <Logger />}
     </div>

@@ -15,7 +15,7 @@ const AdvertisementPopup = ({ onClose }) => {
         <h2>Stay Fit and Healthy!</h2>
         <p>Discover the best exercises and nutrition tips to maintain your health.</p>
         <img
-          src="https://via.placeholder.com/300x200?text=Fitness+Ad"
+          src="https://via.placeholder.com/300x200?text=Fitness+Ad" // Replace this URL
           alt="Fitness Advertisement"
           className="popup-image"
         />

@@ -3,8 +3,6 @@ import './Logger.css'; // Ensure the correct CSS file is imported
 
 const Logger = () => {
   const [logHistory, setLogHistory] = useState([]);
-  const [selectedLogs, setSelectedLogs] = useState({ first: null, second: null });
-  const [comparisonResult, setComparisonResult] = useState(null);
   const [newLog, setNewLog] = useState({
     exercise: '',
     duration: '',
@@ -16,18 +14,13 @@ const Logger = () => {
   });
 
   const handleAddLog = () => {
-    if (
-      !newLog.exercise ||
-      !newLog.duration ||
-      !newLog.meal ||
-      !newLog.calories ||
-      !newLog.weight ||
-      !newLog.height ||
-      !newLog.timestamp
-    ) {
+    const { exercise, duration, meal, calories, weight, height, timestamp } = newLog;
+
+    if (!exercise || !duration || !meal || !calories || !weight || !height || !timestamp) {
       alert('Please fill in all fields.');
       return;
     }
+
     setLogHistory((prevLogs) => [...prevLogs, newLog]);
     setNewLog({
       exercise: '',
@@ -37,32 +30,6 @@ const Logger = () => {
       weight: '',
       height: '',
       timestamp: '',
-    });
-  };
-
-  const handleCompare = () => {
-    const { first, second } = selectedLogs;
-    if (first === null || second === null || first === second) {
-      setComparisonResult('Please select two different logged entries.');
-      return;
-    }
-
-    const log1 = logHistory[first];
-    const log2 = logHistory[second];
-
-    const bmiDifference = parseFloat(log1.value.split(': ')[1]) - parseFloat(log2.value.split(': ')[1]);
-    const recommendation =
-      bmiDifference > 0
-        ? 'Consider reducing calorie intake and increasing physical activity.'
-        : bmiDifference < 0
-        ? 'Great progress! Maintain a balanced diet and regular exercise.'
-        : 'Your BMI is consistent. Keep up the good work!';
-
-    setComparisonResult({
-      log1,
-      log2,
-      bmiDifference: bmiDifference.toFixed(2),
-      recommendation,
     });
   };
 
@@ -145,57 +112,8 @@ const Logger = () => {
           <p>No logged items yet.</p>
         )}
       </div>
-
-      {logHistory.length > 1 && (
-        <div className="logger-compare-section">
-          <h3>Compare BMI</h3>
-          <div className="logger-select-container">
-            <select
-              onChange={(e) => setSelectedLogs((prev) => ({ ...prev, first: parseInt(e.target.value, 10) }))}
-              className="logger-select"
-            >
-              <option value="">Select First Log</option>
-              {logHistory.map((_, index) => (
-                <option key={index} value={index}>
-                  Logged Data {index + 1}
-                </option>
-              ))}
-            </select>
-            <select
-              onChange={(e) => setSelectedLogs((prev) => ({ ...prev, second: parseInt(e.target.value, 10) }))}
-              className="logger-select"
-            >
-              <option value="">Select Second Log</option>
-              {logHistory.map((_, index) => (
-                <option key={index} value={index}>
-                  Logged Data {index + 1}
-                </option>
-              ))}
-            </select>
-          </div>
-          <button onClick={handleCompare} className="logger-button">
-            Compare
-          </button>
-        </div>
-      )}
-
-      {comparisonResult && (
-        <div className="logger-comparison-result">
-          {typeof comparisonResult === 'string' ? (
-            <p>{comparisonResult}</p>
-          ) : (
-            <>
-              <h3>Comparison Result</h3>
-              <p><strong>Log 1 Value:</strong> {comparisonResult.log1.value}</p>
-              <p><strong>Log 2 Value:</strong> {comparisonResult.log2.value}</p>
-              <p><strong>BMI Difference:</strong> {comparisonResult.bmiDifference}</p>
-              <p><strong>Recommendation:</strong> {comparisonResult.recommendation}</p>
-            </>
-          )}
-        </div>
-      )}
     </div>
   );
 };
 
-export default Logger;
+export default Logger; // Ensure the component is exported as default

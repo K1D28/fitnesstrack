@@ -11,7 +11,7 @@ const Advertisement = () => {
       <div className="advertisement-section">
         <div className="advertisement-item">
           <img
-            src="https://via.placeholder.com/300x200?text=Exercise+Photo"
+            src="https://example.com/exercise-photo.jpg"
             alt="Exercise"
             className="advertisement-image"
           />
@@ -19,7 +19,7 @@ const Advertisement = () => {
         </div>
         <div className="advertisement-item">
           <img
-            src="https://via.placeholder.com/300x200?text=Healthy+Nutrition"
+            src="https://example.com/healthy-nutrition.jpg"
             alt="Nutrition"
             className="advertisement-image"
           />
