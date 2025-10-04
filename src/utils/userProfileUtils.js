@@ -6,5 +6,7 @@ export const saveUserProfile = (profile) => {
 
 export const loadUserProfile = () => {
   const profile = localStorage.getItem(USER_PROFILE_KEY);
-  return profile ? JSON.parse(profile) : { username: 'User', weight: null, height: null, bmi: null };
+  return profile
+    ? JSON.parse(profile)
+    : { username: 'User', weight: null, height: null, bmi: null }; // Default to null for weight and height
 };

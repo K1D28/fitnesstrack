@@ -17,7 +17,7 @@ const CaloriesBurntPage = ({ chartData, onGoBack, recommendations }) => {
         <Line data={chartData} options={{ responsive: true, maintainAspectRatio: false }} />
       </div>
       <div className="recommendations">
-        <h2>Recommendations</h2>
+        <h2>Calories Recommendations</h2>
         <p>{recommendations}</p>
       </div>
     </div>

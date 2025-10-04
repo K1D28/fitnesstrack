@@ -31,6 +31,7 @@ const FrontendLogger = ({ onComplete, onLogout, username = 'User' }) => { // Add
   useEffect(() => {
     if (!userProfile.weight || !userProfile.height) {
       setShowPrompt(true); // Show prompt if weight and height are not set
+      alert('Please set your weight and height in the profile section.'); // Notify the user to set their profile
     } else {
       setShowPrompt(false); // Hide prompt if weight and height are already set
     }
