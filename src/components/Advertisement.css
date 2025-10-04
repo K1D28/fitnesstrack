@@ -1,0 +1,33 @@
+.advertisement-container {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.advertisement-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.advertisement-description {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.advertisement-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.advertisement-item {
+  text-align: center;
+}
+
+.advertisement-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}

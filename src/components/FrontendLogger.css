@@ -1,0 +1,92 @@
+.logger-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #4B5563; /* Gray background */
+}
+
+.card {
+  background-color: #1E3A8A; /* Primary blue */
+  color: #FFFFFF; /* White text */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #D1D5DB;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3B82F6; /* Accent blue */
+  box-shadow: 0 0 5px #3B82F6;
+}
+
+.save-button, .compare-button {
+  background-color: #3B82F6; /* Accent blue */
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.save-button:hover, .compare-button:hover {
+  transform: scale(1.1);
+  background-color: #60A5FA; /* Lighter blue */
+}
+
+.save-button:active, .compare-button:active {
+  background-color: #1E40AF; /* Darker blue */
+}
+
+.log-history {
+  margin-top: 20px;
+}
+
+.log-item {
+  background-color: #3B82F6; /* Accent blue */
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.compare-section {
+  margin-top: 20px;
+}
+
+.compare-selects {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.comparison-result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #1E40AF; /* Darker blue */
+  color: #FFFFFF;
+  border-radius: 5px;
+}

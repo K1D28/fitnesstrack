@@ -57,6 +57,18 @@ $ARGUMENTS
    - Dependency notes
    - Parallel execution guidance
 
+8. Adhere to the following principles:
+   - **Code Quality**: Ensure tasks enforce clean, maintainable, and modular code.
+   - **Testing Standards**: Include comprehensive unit, integration, and end-to-end tests.
+   - **User Experience Consistency**: Prioritize tasks that maintain a seamless and intuitive user experience.
+   - **Performance Requirements**: Optimize for efficiency and scalability in all implementation tasks.
+
+9. Update the logging functionality:
+   - Combine logging of exercises, meals, weight, and height into a single operation.
+   - Remove individual buttons for each logging function.
+   - Add a single button to log all information at once.
+   - Ensure the logged data includes timestamps and is formatted correctly.
+
 Context for task generation: $ARGUMENTS
 
 The tasks.md should be immediately executable - each task must be specific enough that an LLM can complete it without additional context.

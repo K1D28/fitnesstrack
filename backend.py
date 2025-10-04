@@ -1,15 +1,12 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 from datetime import datetime
 
-app = Flask(__name__, template_folder='templates', static_folder='static')
+app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # In-memory storage for logged items
 log_history = []
-
-@app.route('/')
-def index():
-    # Render the main HTML page
-    return render_template('index.html')
 
 @app.route('/log', methods=['POST'])
 def log_data():

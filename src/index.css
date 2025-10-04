@@ -1,0 +1,124 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #4B5563; /* Gray background */
+  color: #D1D5DB; /* Secondary gray text */
+  padding: 20px;
+}
+
+button {
+  background-color: #3B82F6; /* Accent blue */
+  color: #FFFFFF; /* White text */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1); /* Scale on hover */
+  background-color: #60A5FA; /* Lighter blue */
+}
+
+button:active {
+  background-color: #1E40AF; /* Darker blue */
+}
+
+h1 {
+  text-align: center;
+  color: #FFFFFF; /* White text */
+}
+
+h2 {
+  margin-top: 20px;
+  color: #FFFFFF; /* White text */
+}
+
+input, select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #D1D5DB;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #3B82F6; /* Accent blue */
+  box-shadow: 0 0 5px #3B82F6;
+}
+
+div {
+  margin-bottom: 20px;
+}
+
+.log-item {
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #1E3A8A; /* Primary blue */
+  color: #FFFFFF; /* White text */
+}
+
+/* Running duration styles */
+.running-duration-label {
+  font-size: 1rem;
+  color: #FFFFFF; /* White text */
+  margin-bottom: 5px;
+  display: block;
+}
+
+.running-duration-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.running-duration-input:focus {
+  outline: none;
+  border-color: #3B82F6; /* Accent blue */
+  box-shadow: 0 0 5px #3B82F6;
+}
+
+/* Exercise duration styles */
+.exercise-duration-label {
+  font-size: 1rem;
+  color: #FFFFFF; /* White text */
+  margin-bottom: 5px;
+  display: block;
+}
+
+.exercise-duration-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.exercise-duration-input:focus {
+  outline: none;
+  border-color: #3B82F6; /* Accent blue */
+  box-shadow: 0 0 5px #3B82F6;
+}
+
+.log-container {
+  border: 1px solid #D1D5DB;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #1E3A8A; /* Primary blue */
+  color: #FFFFFF; /* White text */
+}
